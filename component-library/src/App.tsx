@@ -1,6 +1,7 @@
 // import {Button} from "@components/Button"
 import { Button } from "./components/Button";
 import { Carousel } from "./components/Carousel";
+import { LoadingOverlay } from "./components/LoadingOverlay";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       click on this <a href="/">link</a>
       <Button label="hi" />
       <Carousel />
+      <LoadingOverlay />
     </>
   );
 }

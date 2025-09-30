@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "./components/LoadingOverlay/blinkingdots.css";
+@import "./components/Carousel/carousel.css";
+/* @import url("./components/SparkleAnim/sparkleanim.scss"); */
 
 /* Matcha colors from https://www.color-hex.com/color-palette/92081 */
 @theme {
@@ -21,35 +24,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.carousel {
-  position: relative;
-
-  &::scroll-button(left) {
-    left: -45px;
-    content: "⬅" / "Scroll Left";
-  }
-
-  &::scroll-button(right) {
-    right: -45px;
-    content: "⮕" / "Scroll Right";
-  }
-
-  &::scroll-button(*) {
-    z-index: 10;
-    top: calc(50% - 15px);
-    border-radius: 100px;
-    width: 30px;
-    height: 30px;
-    background-color: var(--color-m3);
-    color: var(--color-cream);
-    position: absolute;
-  }
-
-  &::scroll-button(*):focus-visible {
-    outline-offset: 5px;
-  }
 }
 
 a {

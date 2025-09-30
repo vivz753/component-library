@@ -1,0 +1,28 @@
+.carousel {
+  position: relative;
+
+  &::scroll-button(left) {
+    left: -45px;
+    content: "⬅" / "Scroll Left";
+  }
+
+  &::scroll-button(right) {
+    right: -45px;
+    content: "⮕" / "Scroll Right";
+  }
+
+  &::scroll-button(*) {
+    z-index: 10;
+    top: calc(50% - 15px);
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-m3);
+    color: var(--color-cream);
+    position: absolute;
+  }
+
+  &::scroll-button(*):focus-visible {
+    outline-offset: 5px;
+  }
+}
