@@ -14,13 +14,42 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: var(--color-cream);
+  color: var(--color-m3);
   background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.carousel {
+  position: relative;
+
+  &::scroll-button(left) {
+    left: -45px;
+    content: "⬅" / "Scroll Left";
+  }
+
+  &::scroll-button(right) {
+    right: -45px;
+    content: "⮕" / "Scroll Right";
+  }
+
+  &::scroll-button(*) {
+    z-index: 10;
+    top: calc(50% - 15px);
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-m3);
+    color: var(--color-cream);
+    position: absolute;
+  }
+
+  &::scroll-button(*):focus-visible {
+    outline-offset: 5px;
+  }
 }
 
 a {

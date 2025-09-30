@@ -1,12 +1,16 @@
-function App() {
+// import {Button} from "@components/Button"
+import { Button } from "./components/Button";
+import { Carousel } from "./components/Carousel";
 
+function App() {
   return (
     <>
-      <p>
-       It works hehehe 
-      </p>
+      <p className="text-m1 bg-cream">It works hehehe</p>
+      click on this <a href="/">link</a>
+      <Button label="hi" />
+      <Carousel />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
