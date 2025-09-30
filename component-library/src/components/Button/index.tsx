@@ -1,7 +1,39 @@
-import React from "react"
-
-export const Button = () => {
-	return (
-		<button className="bg-red-300">Button</button>
-	)
+import clsx from "clsx";
+export interface ButtonProps {
+  /** Is this the principal call to action on the page? */
+  primary?: boolean;
+  /** How large should the button be? */
+  size?: "small" | "medium" | "large";
+  /** Button contents */
+  label: string;
+  /** Optional click handler */
+  onClick?: () => void;
 }
+
+const baseStyle =
+  "rounded-md border border-transparent cursor-pointer transition-all ease-in-out  focus:outline-2";
+const primaryStyle = "hover:border-m2 bg-m3 text-cream";
+const secondaryStyle = "hover:border-m2 bg-cream text-m3";
+const smStyle = "px-[0.6em] py-[0.3em] text-sm";
+const mdStyle = "px-[1.2em] py-[0.6em]";
+const lgStyle = "px-[2.5em] py-[0.8em] text-xl";
+
+export const Button = ({
+  primary,
+  label,
+  size = "medium",
+  ...props
+}: ButtonProps) => {
+  return (
+    <button
+      type="button"
+      className={clsx(
+        size === "large" ? lgStyle : size === "medium" ? mdStyle : smStyle,
+        primary ? primaryStyle : secondaryStyle,
+        baseStyle
+      )}
+      {...props}>
+      {label}
+    </button>
+  );
+};

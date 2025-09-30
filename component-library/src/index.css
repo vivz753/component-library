@@ -1,12 +1,20 @@
 @import "tailwindcss";
 
+/* Matcha colors from https://www.color-hex.com/color-palette/92081 */
+@theme {
+  --color-m3: rgb(68, 98, 74);
+  --color-m2: rgb(139, 168, 136);
+  --color-m1: rgb(192, 207, 178);
+  --color-cream: rgb(241, 235, 225);
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--color-cream);
   background-color: #242424;
 
   font-synthesis: none;
@@ -17,11 +25,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--color-m2);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--color-m3);
 }
 
 body {
@@ -35,25 +43,6 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
