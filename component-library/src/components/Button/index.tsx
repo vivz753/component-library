@@ -8,6 +8,7 @@ export interface ButtonProps {
   label: string;
   /** Optional click handler */
   onClick?: () => void;
+  className?: string;
 }
 
 const baseStyle =
@@ -22,12 +23,14 @@ export const Button = ({
   primary,
   label,
   size = "medium",
+  className,
   ...props
 }: ButtonProps) => {
   return (
     <button
       type="button"
       className={clsx(
+        className,
         size === "large" ? lgStyle : size === "medium" ? mdStyle : smStyle,
         primary ? primaryStyle : secondaryStyle,
         baseStyle
