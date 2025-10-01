@@ -5,13 +5,13 @@ import { LoadingOverlay } from "./components/LoadingOverlay";
 import { SparkleAnim } from "./components/SparkleAnim";
 import { SparkleIcon } from "./icons/SparkleIcon";
 import clsx from "clsx";
-import {Header} from "./components/Header"
+import { Header } from "./components/Header";
 
 function App() {
   return (
     <div className="w-screen h-screen min-h-screen bg-black">
       {/* <p className="text-m1 bg-cream">It works hehehe</p> */}
-      <Header />
+      <Header username="vivian" />
       click on this <a href="/">link</a>
       <Button label="hi" />
       <div className="flex shrink-0 w-[100px] h-[100px] m-20 bg-red-200">
