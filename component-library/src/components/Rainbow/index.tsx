@@ -27,6 +27,8 @@ const largeRainbow: RainbowSize = {
   height: 100,
 };
 
+// const colors = ['#FF1B8D', '#FFDA00', '#1BB3FF']
+
 export const Rainbow: React.FC<RainbowProps> = ({ size = "small" }) => {
   // prefer if i can do this through ref on <path> in Arc
   //  const pathLength = document.querySelector('path')?.getTotalLength(); // is there a way to do this without querying the document?
