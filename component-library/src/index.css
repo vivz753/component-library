@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "./components/LoadingOverlay/blinkingdots.css";
 @import "./components/Carousel/carousel.css";
-@import "./components/SparkleAnim/sparkleanim.css";
+@import "./components/Sparkles/sparkles.css";
 
 /* Matcha colors from https://www.color-hex.com/color-palette/92081 */
 @theme {
@@ -42,7 +42,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-
 
 @media (prefers-color-scheme: light) {
   :root {

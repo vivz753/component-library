@@ -42,7 +42,7 @@ const generateSparkle = (
  * @param duration the duration of the animation in ms
  * @returns JSX
  */
-export const SparkleAnim: FC<
+export const Sparkles: FC<
   React.PropsWithChildren<{ amount?: number; duration?: number }>
 > = ({ children, amount = 10, duration = 5000 }) => {
   const [sparkles, setSparkles] = useState<Sparkle[]>([]);
@@ -57,7 +57,7 @@ export const SparkleAnim: FC<
   }, [amount, duration]);
 
   return (
-    <div className="relative flex border border-red-500 bg-white">
+    <div className="relative flex bg-white">
       {sparkles.map((sparkle) => (
         <div
           id={sparkle.id}

@@ -11,7 +11,6 @@
 }
 
 @keyframes spin {
-
   from {
     transform: rotate(0deg);
   }
@@ -21,9 +20,9 @@
 }
 
 .anim-grow-and-shrink {
-	animation: grow-and-shrink 850ms ease-in-out forwards;
+  animation: grow-and-shrink 850ms ease-in-out forwards;
 }
 
 .anim-spin {
-	animation: spin 1000ms linear infinite forwards;
+  animation: spin 1000ms linear infinite forwards;
 }
