@@ -1,5 +1,7 @@
 import * as d3 from "d3";
 import { useMemo, useEffect, useRef } from "react";
+// import { useDimensions } from "../../hooks/useDimensions";
+import { Bar } from "./Bar";
 
 const BIN_PADDING = 1;
 const MARGIN = { top: 30, right: 30, bottom: 40, left: 50 };
@@ -9,11 +11,12 @@ type HistogramProps = {
   width?: number;
   height?: number;
   data?: number[];
+  ref?: React.RefObject<HTMLDivElement>;
 };
 
 // const domain = [0, 20];
 // const domain = [0, 10]
-const domain = [0, 1000];
+const domain: [number, number] = [0, 100];
 const exampleData = [
   0, 1, 1, 3, 4, 6, 7, 8, 2, 3, 6, 8, 9, 10, 11, 18, 13, 15, 16, 19, 20,
 ];
@@ -24,15 +27,26 @@ export const Histogram = ({
   width = 700,
   height = 400,
   data = exampleData,
+  ref,
 }: HistogramProps) => {
   const axesRef = useRef(null);
+  // const dimensions = useDimensions(ref);
+  // console.log("ref", ref);
+  // useEffect(() => {
+
+  //   const dimensions = useDimensions(ref)
+  //   console.log('dimensions in histo', dimensions)
+  // }, [ref])
+  // console.log("dimensions in Histo", dimensions);
+  // const {width, height} = dimensions
+  // const width = 0
+  // const height =0
   const boundWidth = width - MARGIN.right - MARGIN.left;
   const boundHeight = height - MARGIN.top - MARGIN.bottom;
   //read the data
 
   // build the scales
   const xScale = useMemo(() => {
-
     return d3.scaleLinear().domain(domain).range([10, boundWidth]);
   }, [data, width]);
 
@@ -72,13 +86,11 @@ export const Histogram = ({
 
   // Construct the bars
   const bars = bins.map((b, i) => {
-    console.log("bin", b, b.length);
+    // console.log("bin", b, b.length);
 
     return b.x0 !== undefined && b.x1 !== undefined ? (
-      <rect
+      <Bar
         key={i}
-        fill="var(--color-m1)"
-        stroke="var(--color-m3)"
         x={xScale(b.x0) + BIN_PADDING / 2}
         width={xScale(b.x1) - xScale(b.x0) - BIN_PADDING}
         y={yScale(b.length)}
@@ -88,7 +100,7 @@ export const Histogram = ({
   });
 
   return (
-    <svg className="border border-green-200" width={width} height={height}>
+    <svg className="" width={width} height={height}>
       <g
         width={boundWidth}
         height={boundHeight}
