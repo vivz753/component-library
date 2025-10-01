@@ -8,26 +8,20 @@ import clsx from "clsx";
 import { Header } from "./components/Header";
 import {Input} from "./components/Input"
 import {useState} from "react"
+import {Histogram} from "./components/Histogram"
+
+const exampleData = [1, 1, 1, 2, 2, 2, 3, 4, 5, 6, 6, 6, 9]
 
 function App() {
   const [search, setSearch] = useState("")
   return (
-    <div className="w-screen min-h-screen bg-black">
+    <div className="w-screen min-h-screen bg-white">
       {/* <p className="text-m1 bg-cream">It works hehehe</p> */}
       <Header username="vivian" />
-      click on this <a href="/">link</a>
+          <Histogram width={400} height={400} data={exampleData} />
+
       <Input placeholder="Search for a value" value={search} onChange={(e) => setSearch(e.target.value)} />
       <Button label="hi" />
-      <div className="flex shrink-0 w-[100px] h-[100px] m-20 bg-red-200">
-        <Sparkles>
-          <div className="p-20">hi</div>
-        </Sparkles>
-      </div>
-      <Button label="poop">
-        <Sparkles>
-          <div className="p-20">hi</div>
-        </Sparkles>
-      </Button>
       {/* <Carousel /> */}
       {/* <LoadingOverlay /> */}
     </div>
