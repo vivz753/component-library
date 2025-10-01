@@ -1,18 +1,42 @@
-import Arc from "./Arc"
+import { Arc } from "./Arc";
 
-export const Rainbow: React.FC = (props) => {
+interface RainbowProps {
+  size?: "small" | "large";
+}
+interface RainbowSize {
+  r?: number;
+  center?: number;
+  height?: number;
+  pathLength?: number;
+  viewBox?: string;
+}
+
+const smallRainbow: RainbowSize = {
+  r: 100,
+  center: 150,
+  viewBox: "25 40 250 100",
+  pathLength: 314,
+  height: 50,
+};
+
+const largeRainbow: RainbowSize = {
+  r: 200,
+  center: 300,
+  viewBox: "50 80 500 200",
+  pathLength: 628,
+  height: 100,
+};
+
+export const Rainbow: React.FC<RainbowProps> = ({ size = "small" }) => {
   // prefer if i can do this through ref on <path> in Arc
   //  const pathLength = document.querySelector('path')?.getTotalLength(); // is there a way to do this without querying the document?
-  const pathLength = 314
-
-  const height = 50
 
   // should be fixed
-  const viewBox = "25 40 250 100"
-  const center = 150
-  const r = 100
-  const lArcAngle = 270
-  const rArcAngle = 90
+  const lArcAngle = 270;
+  const rArcAngle = 90;
+
+  const { r, center, viewBox, pathLength, height } =
+    size === "small" ? smallRainbow : largeRainbow;
 
   return (
     <div className="flex h-auto w-auto justify-center">
@@ -72,5 +96,5 @@ export const Rainbow: React.FC = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
