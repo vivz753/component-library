@@ -8,7 +8,7 @@ import clsx from "clsx";
 import { Header } from "./components/Header";
 import { Input } from "./components/Input";
 import { useState, useRef, useEffect } from "react";
-import { TransitionDemo } from "./components/Histogram/TransitionDemo";
+import { Histogram } from "./components/Histogram";
 import { useDimensions } from "./hooks/useDimensions";
 import { d1, d2, d3 } from "./components/Histogram/sampleData";
 
@@ -26,11 +26,11 @@ function App() {
     <div className="w-screen min-h-screen bg-white">
       {/* <p className="text-m1 bg-cream">It works hehehe</p> */}
       <Header username="vivian" />
-      <TransitionDemo
+      <Histogram
         width={700}
         height={400}
         dataset={[d1, d2, d3]}
-        domain={[0, 50]}
+        domain={[0, 150]}
       />
       {/* <Histogram data={exampleData} /> */}
 
