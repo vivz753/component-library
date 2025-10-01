@@ -33,6 +33,14 @@ export const MultipleDatasets: Story = {
     dataset: [d1, d2, d3],
   },
 };
+export const MorePadding: Story = {
+  args: {
+    width: 700,
+    height: 400,
+    dataset: [d1, d2, d3],
+    binPadding: 3,
+  },
+};
 
 export const LargeDomain: Story = {
   args: {
