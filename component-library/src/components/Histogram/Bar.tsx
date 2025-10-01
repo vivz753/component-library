@@ -18,6 +18,9 @@ export const Bar = (props: BarProps) => {
     delay: x,
   });
 
+  // don't return any bars if y does not exist for that x val
+  if (y === undefined) return null;
+
   return (
     <animated.rect
       fill="var(--color-m1)"

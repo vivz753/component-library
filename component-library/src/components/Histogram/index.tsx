@@ -12,11 +12,11 @@ type HistogramProps = {
   height?: number;
   data?: number[];
   ref?: React.RefObject<HTMLDivElement>;
+  domain?: [number, number];
 };
 
 // const domain = [0, 20];
 // const domain = [0, 10]
-const domain: [number, number] = [0, 100];
 const exampleData = [
   0, 1, 1, 3, 4, 6, 7, 8, 2, 3, 6, 8, 9, 10, 11, 18, 13, 15, 16, 19, 20,
 ];
@@ -27,6 +27,7 @@ export const Histogram = ({
   width = 700,
   height = 400,
   data = exampleData,
+  domain = [0, 100],
   ref,
 }: HistogramProps) => {
   const axesRef = useRef(null);
@@ -48,7 +49,7 @@ export const Histogram = ({
   // build the scales
   const xScale = useMemo(() => {
     return d3.scaleLinear().domain(domain).range([10, boundWidth]);
-  }, [data, width]);
+  }, [data, width, domain]);
 
   console.log("xScale:", xScale);
 

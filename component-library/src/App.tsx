@@ -10,6 +10,7 @@ import { Input } from "./components/Input";
 import { useState, useRef, useEffect } from "react";
 import { TransitionDemo } from "./components/Histogram/TransitionDemo";
 import { useDimensions } from "./hooks/useDimensions";
+import { d1, d2, d3 } from "./components/Histogram/sampleData";
 
 // const exampleData = [1, 1, 1, 2, 2, 2, 3, 4, 5, 6, 6, 6, 9]
 
@@ -25,7 +26,12 @@ function App() {
     <div className="w-screen min-h-screen bg-white">
       {/* <p className="text-m1 bg-cream">It works hehehe</p> */}
       <Header username="vivian" />
-      <TransitionDemo width={700} height={400} />
+      <TransitionDemo
+        width={700}
+        height={400}
+        dataset={[d1, d2, d3]}
+        domain={[0, 50]}
+      />
       {/* <Histogram data={exampleData} /> */}
 
       {/* <Wrapper ref={ref}> */}

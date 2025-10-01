@@ -1,6 +1,6 @@
 // Standard Normal variate using Box-Muller transform.
 // https://stackoverflow.com/questions/25582882/javascript-math-random-normal-distribution-gaussian-bell-curve
-const gaussianRandom = (mean = 0, stdev = 1) => {
+export const gaussianRandom = (mean = 0, stdev = 1) => {
   let u = 1 - Math.random(); //Converting [0,1) to (0,1)
   let v = Math.random();
   let z = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
@@ -8,6 +8,6 @@ const gaussianRandom = (mean = 0, stdev = 1) => {
   return z * stdev + mean;
 };
 
-export const d1 = Array.from({ length: 1000 }, () => gaussianRandom(60, 10));
-
+export const d1 = Array.from({ length: 1000 }, () => gaussianRandom(20, 10));
 export const d2 = Array.from({ length: 1000 }, () => gaussianRandom(40, 10));
+export const d3 = Array.from({ length: 1000 }, () => gaussianRandom(80, 10));
