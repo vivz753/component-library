@@ -13,9 +13,10 @@ export interface ButtonProps {
 }
 
 const baseStyle =
-  "rounded-md border border-transparent cursor-pointer transition-all ease-in-out  focus:outline-2";
-const primaryStyle = "hover:border-m2 bg-m3 text-cream";
-const secondaryStyle = "hover:border-m2 bg-cream text-m3";
+  "rounded-md border border-transparent cursor-pointer transition-all ease-in-out outline-2 outline-transparent";
+const primaryStyle =
+  "active:outline-m2 active:text-m1 hover:bg-m2 hover:text-m3 hover:outline-m2 active:bg-m3 active:text-cream bg-m3 text-cream";
+const secondaryStyle = "hover:outline-m2 active:outline-m3 bg-cream text-m3";
 const smStyle = "px-[0.6em] py-[0.3em] text-sm";
 const mdStyle = "px-[1.2em] py-[0.6em]";
 const lgStyle = "px-[2.5em] py-[0.8em] text-xl";
@@ -25,7 +26,6 @@ export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
   label,
   size = "medium",
   className,
-  children,
   ...props
 }: ButtonProps) => {
   return (
@@ -39,7 +39,6 @@ export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
       )}
       {...props}>
       {label}
-      {children}
     </button>
   );
 };
