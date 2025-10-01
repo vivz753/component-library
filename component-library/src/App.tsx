@@ -2,7 +2,7 @@
 import { Button } from "./components/Button";
 import { Carousel } from "./components/Carousel";
 import { LoadingOverlay } from "./components/LoadingOverlay";
-import { SparkleAnim } from "./components/SparkleAnim";
+import { Sparkles } from "./components/Sparkles";
 import { SparkleIcon } from "./icons/SparkleIcon";
 import clsx from "clsx";
 import { Header } from "./components/Header";
@@ -15,14 +15,14 @@ function App() {
       click on this <a href="/">link</a>
       <Button label="hi" />
       <div className="flex shrink-0 w-[100px] h-[100px] m-20 bg-red-200">
-        <SparkleAnim>
+        <Sparkles>
           <div className="p-20">hi</div>
-        </SparkleAnim>
+        </Sparkles>
       </div>
       <Button label="poop">
-        <SparkleAnim>
+        <Sparkles>
           <div className="p-20">hi</div>
-        </SparkleAnim>
+        </Sparkles>
       </Button>
       {/* <Carousel /> */}
       {/* <LoadingOverlay /> */}

@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import type { FC } from "react";
 export interface ButtonProps {
   /** Is this the principal call to action on the page? */
   primary?: boolean;
@@ -19,11 +20,12 @@ const smStyle = "px-[0.6em] py-[0.3em] text-sm";
 const mdStyle = "px-[1.2em] py-[0.6em]";
 const lgStyle = "px-[2.5em] py-[0.8em] text-xl";
 
-export const Button = ({
+export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
   primary,
   label,
   size = "medium",
   className,
+  children,
   ...props
 }: ButtonProps) => {
   return (
@@ -37,6 +39,7 @@ export const Button = ({
       )}
       {...props}>
       {label}
+      {children}
     </button>
   );
 };
