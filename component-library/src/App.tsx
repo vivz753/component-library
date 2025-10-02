@@ -9,7 +9,7 @@ import { Header } from "./components/Header";
 import { Input } from "./components/Input";
 import { useState, useRef, useEffect } from "react";
 import { Histogram } from "./components/Histogram";
-import { useDimensions } from "./hooks/useDimensions";
+// import { useDimensions } from "./hooks/useDimensions";
 import { d1, d2, d3 } from "./components/Histogram/sampleData";
 
 // const exampleData = [1, 1, 1, 2, 2, 2, 3, 4, 5, 6, 6, 6, 9]
@@ -18,14 +18,16 @@ function App() {
   const ref = useRef<HTMLDivElement>(null);
 
   // console.log("useDimensions", useDimensions())
-  const dimensions = useDimensions(ref);
-  console.log("dimensions", dimensions);
+  // const dimensions = useDimensions(ref);
+  // console.log("dimensions", dimensions);
 
   const [search, setSearch] = useState("");
   return (
     <div className="w-screen min-h-screen bg-white">
       {/* <p className="text-m1 bg-cream">It works hehehe</p> */}
       <Header username="vivian" />
+      <Button label="test" />
+      <Button primary label="test" />
       <Histogram
         width={700}
         height={400}
